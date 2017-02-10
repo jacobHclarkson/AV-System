@@ -9,9 +9,10 @@ public class FollowPlayer : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        transform.position = player.transform.position;
+	void LateUpdate() {
+        // calculate the change in position that the char has gone through
+        // apply that to this
+
 	
 	}
 }
