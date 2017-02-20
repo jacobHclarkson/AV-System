@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class TypingContainerController : MonoBehaviour {
 
     [SerializeField] GameObject typingContainer;
-    InputField inputField;
+    public InputField inputField;
 
     // whether or not to show the typing box
     bool show = true;
@@ -23,7 +23,13 @@ public class TypingContainerController : MonoBehaviour {
 
     void Start()
     {
-        ToggleShow();
+        //ToggleShow();
+        // simulate mouse click in input field (get focus)
+        inputField = GetComponentInChildren<InputField>();
+        inputField.Select();
+
+        // note start time
+        startTime = System.DateTime.Now;
     }
 
     void Update()
