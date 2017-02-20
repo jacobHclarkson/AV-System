@@ -21,6 +21,14 @@ public class TypingContainerController : MonoBehaviour {
     System.DateTime startTime;
     System.TimeSpan timeElapsed;
 
+    // stuff for displaying words/recording input
+    string currentPrompt;
+    string prescribedText = "";
+    string[] wordlist;
+    public TextAsset textAsset;
+    public int wordsPerLine = 15;
+    public Text prompt;
+
     void Start()
     {
         //ToggleShow();
@@ -30,22 +38,25 @@ public class TypingContainerController : MonoBehaviour {
 
         // note start time
         startTime = System.DateTime.Now;
+
+        // read words from file
+        ReadWords();
     }
 
     void Update()
     {
-        PollForInput();
+        //PollForInput();
         CaptureRawInput();
-    }
-
-    void PollForInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            show = !show;
-            ToggleShow();
+	    if (Input.GetKeyDown(KeyCode.Return)){
+            SavePrompt();
+            currentPrompt = GenerateWords();
+            prompt.text = currentPrompt;
+            inputField.text = "";
+            inputField.ActivateInputField();
+            inputField.Select();
         }
     }
+
 
     void CaptureRawInput()
     {
@@ -96,4 +107,41 @@ public class TypingContainerController : MonoBehaviour {
             typingContainer.SetActive(false);
         }
     }
+
+
+    // Save prescribed text
+    public void SavePrompt()
+    {
+        prescribedText += prompt.text;
+    }
+
+    // getter for recorded prescribed text
+    public string GetPrescribedText()
+    {
+        return prescribedText;
+    }
+
+    // read words from file
+    void ReadWords()
+    {
+        string wordsFromFile = textAsset.text;
+        wordlist = wordsFromFile.Split(' ');
+    }
+
+    // generate the next line of words
+    string GenerateWords()
+    {
+        string nextPrompt = "";
+        for(int i=0; i<wordsPerLine; i++)
+        {
+            int idx = Random.Range(0, wordlist.Length);
+            nextPrompt = nextPrompt + wordlist[idx] + " ";
+        }
+        return nextPrompt;
+    }
+
+
+
+
+
 }
