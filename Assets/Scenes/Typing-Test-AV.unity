@@ -118,10 +118,10 @@ RectTransform:
   - {fileID: 1133935678}
   m_Father: {fileID: 640963701}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.55, y: -51.236496}
-  m_SizeDelta: {x: 805.1, y: 102.47299}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10973438
 MonoBehaviour:
@@ -715,8 +715,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 237947029}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: -100, z: 975}
-  m_LocalScale: {x: 1280, y: 720, z: 0}
+  m_LocalPosition: {x: 0, y: -157, z: 975}
+  m_LocalScale: {x: 1400, y: 790, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_Children: []
   m_Father: {fileID: 1646909463}
@@ -929,10 +929,10 @@ RectTransform:
   - {fileID: 1446224668}
   m_Father: {fileID: 788341568}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405.55, y: -57.236496}
-  m_SizeDelta: {x: 805.1, y: 108.47299}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359043585
 MonoBehaviour:
@@ -1633,10 +1633,10 @@ RectTransform:
   - {fileID: 10973437}
   m_Father: {fileID: 788341568}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405.55, y: -162.70949}
-  m_SizeDelta: {x: 805.1, y: 102.47299}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640963702
 MonoBehaviour:
@@ -1847,7 +1847,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.14001465, y: -0.8800049}
+  m_AnchoredPosition: {x: 0, y: -0.8800049}
   m_SizeDelta: {x: 956, y: 538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711873891
@@ -1998,7 +1998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &788341568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2016,8 +2016,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.275, y: 0.41088107}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -123, y: 250}
-  m_SizeDelta: {x: 118, y: -100}
+  m_AnchoredPosition: {x: -125, y: 80}
+  m_SizeDelta: {x: -190, y: -160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788341569
 MonoBehaviour:
@@ -2088,6 +2088,7 @@ MonoBehaviour:
   textAsset: {fileID: 4900000, guid: c578b6a21561e844fa5628904fb667f5, type: 3}
   wordsPerLine: 15
   prompt: {fileID: 1446224669}
+  timeRemaining: 60
 --- !u!1 &796768739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,7 +2472,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 309}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918877545
@@ -2500,7 +2501,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3325,7 +3326,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
@@ -3793,10 +3794,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 359043584}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.55, y: -54.236496}
-  m_SizeDelta: {x: 805.1, y: 108.47299}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446224669
 MonoBehaviour:
@@ -3830,7 +3831,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: the quick brown fox jumps over the lazy dog
+  m_Text: 
 --- !u!222 &1446224670
 CanvasRenderer:
   m_ObjectHideFlags: 0

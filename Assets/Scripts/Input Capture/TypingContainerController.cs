@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.IO;
 
 // this script will control when the typing container hides/shows to the player.
 
@@ -29,6 +30,9 @@ public class TypingContainerController : MonoBehaviour {
     public int wordsPerLine = 15;
     public Text prompt;
 
+    // time the test should run for
+    public float timeRemaining = 60.0f;
+
     void Start()
     {
         //ToggleShow();
@@ -41,19 +45,46 @@ public class TypingContainerController : MonoBehaviour {
 
         // read words from file
         ReadWords();
+        currentPrompt = GenerateWords();
+        prompt.text = currentPrompt;
     }
 
     void Update()
     {
-        //PollForInput();
         CaptureRawInput();
+
+        // timer
+        timeRemaining -= Time.deltaTime;
+        if(timeRemaining <=0)
+        {
+            // grab whatever the user has got so far and exit
+            finalInputString += " " + inputField.text;
+
+            // write stuff to file
+            WriteToFile();
+
+            Debug.Log("Exiting");
+            Application.Quit();
+        }
+
 	    if (Input.GetKeyDown(KeyCode.Return)){
             SavePrompt();
+
+            // record transcribed text
+            finalInputString += " " + inputField.text;
+
+            // add space to raw input
+            rawInputString += " ";
+
             currentPrompt = GenerateWords();
             prompt.text = currentPrompt;
             inputField.text = "";
             inputField.ActivateInputField();
             inputField.Select();
+
+            Debug.Log(rawInputString);
+            Debug.Log(finalInputString);
+
         }
     }
 
@@ -140,8 +171,12 @@ public class TypingContainerController : MonoBehaviour {
         return nextPrompt;
     }
 
-
-
-
-
+    // write data to file
+    void WriteToFile()
+    {
+        StreamWriter sw = new StreamWriter(Application.dataPath + "data.txt");
+        sw.WriteLine(finalInputString);
+        sw.WriteLine(rawInputString);
+        sw.Close();
+    }
 }
