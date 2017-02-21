@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/AV Prototype.unity
+    path: Assets/AV System/Scenes/AV Prototype.unity
   - enabled: 0
-    path: Assets/Scenes/Tests/Environments/Env1.unity
+    path: Assets/z_misc/Test Scenes/Tests/Environments/Env1.unity
   - enabled: 1
-    path: Assets/Scenes/Typing-Test-AV.unity
+    path: Assets/Typing Tests/Scenes/Typing-Test-AV.unity
