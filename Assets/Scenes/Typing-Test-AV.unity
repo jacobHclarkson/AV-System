@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handedness: Right
   target: {fileID: 2007426147}
-  hand: {fileID: 468577874}
+  hand: {fileID: 1929156531}
 --- !u!114 &882492156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4721,7 +4721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handedness: Left
   target: {fileID: 2007426147}
-  hand: {fileID: 1326913940}
+  hand: {fileID: 974397982}
 --- !u!114 &2057029899
 MonoBehaviour:
   m_ObjectHideFlags: 0
