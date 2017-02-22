@@ -16,8 +16,8 @@ public class WebCam : MonoBehaviour {
         {
             if(devices[i].name == "Logitech Webcam C930e")
             {
-                webCamTexture = new WebCamTexture("Logitech Webcam C930e", 960, 480, 60);
-                
+                //webCamTexture = new WebCamTexture("Logitech Webcam C930e", 960, 480, 60);
+                webCamTexture = new WebCamTexture("Logitech Webcam C930e");
             }
         }
  
