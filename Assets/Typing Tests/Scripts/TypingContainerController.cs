@@ -15,8 +15,8 @@ public class TypingContainerController : MonoBehaviour {
     bool show = true;
 
     // string entered by user
-    string finalInputString;
-    string rawInputString;
+    string finalInputString = "";
+    string rawInputString = "";
 
     // stuff for timing
     System.DateTime startTime;
@@ -32,6 +32,10 @@ public class TypingContainerController : MonoBehaviour {
 
     // time the test should run for
     public float timeRemaining = 60.0f;
+
+    // time to first keypress
+    bool firstKeyPressed = false;
+    float timeToFirstKeyPress = 0.0f;
 
     void Start()
     {
@@ -51,9 +55,22 @@ public class TypingContainerController : MonoBehaviour {
 
     void Update()
     {
+        if (!firstKeyPressed)
+        {
+            if(rawInputString != "")
+            {
+                firstKeyPressed = true;
+            }
+        }
+
+
         CaptureRawInput();
 
         // timer
+        if (!firstKeyPressed)
+        {
+            timeToFirstKeyPress += Time.deltaTime;
+        }
         timeRemaining -= Time.deltaTime;
         if(timeRemaining <=0)
         {
@@ -177,6 +194,7 @@ public class TypingContainerController : MonoBehaviour {
         StreamWriter sw = new StreamWriter(Application.dataPath + "data.txt");
         sw.WriteLine(finalInputString);
         sw.WriteLine(rawInputString);
+        sw.WriteLine(timeToFirstKeyPress);
         sw.Close();
     }
 }
