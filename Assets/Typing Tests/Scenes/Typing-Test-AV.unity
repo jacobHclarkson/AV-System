@@ -120,8 +120,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 248.54999, y: -36.236496}
-  m_SizeDelta: {x: 497.09998, y: 72.47299}
+  m_AnchoredPosition: {x: 283.55, y: -36.236496}
+  m_SizeDelta: {x: 567.1, y: 72.47299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &10973438
 MonoBehaviour:
@@ -715,7 +715,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 237947029}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: -157, z: 975}
+  m_LocalPosition: {x: 0, y: -157, z: 980}
   m_LocalScale: {x: 1280, y: 960, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_Children: []
@@ -931,8 +931,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 251.54999, y: -42.236496}
-  m_SizeDelta: {x: 497.09998, y: 78.47299}
+  m_AnchoredPosition: {x: 286.55, y: -42.236496}
+  m_SizeDelta: {x: 567.1, y: 78.47299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359043585
 MonoBehaviour:
@@ -1635,8 +1635,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 251.54999, y: -117.70949}
-  m_SizeDelta: {x: 497.09998, y: 72.47299}
+  m_AnchoredPosition: {x: 286.55, y: -117.70949}
+  m_SizeDelta: {x: 567.1, y: 72.47299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640963702
 MonoBehaviour:
@@ -2016,8 +2016,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.275, y: 0.41088107}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -125, y: 80}
-  m_SizeDelta: {x: -190, y: -160}
+  m_AnchoredPosition: {x: -120, y: 80}
+  m_SizeDelta: {x: -120, y: -160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788341569
 MonoBehaviour:
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   typingContainer: {fileID: 788341567}
   inputField: {fileID: 10973438}
   textAsset: {fileID: 4900000, guid: c578b6a21561e844fa5628904fb667f5, type: 3}
-  wordsPerLine: 15
+  wordsPerLine: 10
   prompt: {fileID: 1446224669}
   timeRemaining: 60
 --- !u!1 &796768739
@@ -3796,8 +3796,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 248.54999, y: -39.236496}
-  m_SizeDelta: {x: 497.09998, y: 78.47299}
+  m_AnchoredPosition: {x: 283.55, y: -39.236496}
+  m_SizeDelta: {x: 567.1, y: 78.47299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446224669
 MonoBehaviour:

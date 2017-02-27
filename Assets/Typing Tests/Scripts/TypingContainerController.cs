@@ -191,7 +191,7 @@ public class TypingContainerController : MonoBehaviour {
     // write data to file
     void WriteToFile()
     {
-        StreamWriter sw = new StreamWriter(Application.dataPath + "data.txt");
+        StreamWriter sw = new StreamWriter(Application.dataPath + "data.txt", true);
         sw.WriteLine(finalInputString);
         sw.WriteLine(rawInputString);
         sw.WriteLine(timeToFirstKeyPress);
