@@ -14,7 +14,8 @@ public class TypingContainerController : MonoBehaviour {
     // whether or not to show the typing box
     bool show = true;
 
-    // string entered by user
+    // strings
+    string prescribedString = "";
     string finalInputString = "";
     string rawInputString = "";
 
@@ -24,7 +25,6 @@ public class TypingContainerController : MonoBehaviour {
 
     // stuff for displaying words/recording input
     string currentPrompt;
-    string prescribedText = "";
     string[] wordlist;
     public TextAsset textAsset;
     public int wordsPerLine = 15;
@@ -77,6 +77,9 @@ public class TypingContainerController : MonoBehaviour {
             // grab whatever the user has got so far and exit
             finalInputString += " " + inputField.text;
 
+            // grab current prompt
+            prescribedString += prompt.text;
+
             // write stuff to file
             WriteToFile();
 
@@ -86,6 +89,9 @@ public class TypingContainerController : MonoBehaviour {
 
 	    if (Input.GetKeyDown(KeyCode.Return)){
             SavePrompt();
+
+            // record presented text
+            //presentedString += " " + prompt.text
 
             // record transcribed text
             finalInputString += " " + inputField.text;
@@ -160,13 +166,13 @@ public class TypingContainerController : MonoBehaviour {
     // Save prescribed text
     public void SavePrompt()
     {
-        prescribedText += prompt.text;
+        prescribedString += prompt.text;
     }
 
     // getter for recorded prescribed text
     public string GetPrescribedText()
     {
-        return prescribedText;
+        return prescribedString;
     }
 
     // read words from file
@@ -192,6 +198,7 @@ public class TypingContainerController : MonoBehaviour {
     void WriteToFile()
     {
         StreamWriter sw = new StreamWriter(Application.dataPath + "data.txt", true);
+        sw.WriteLine(prescribedString);
         sw.WriteLine(finalInputString);
         sw.WriteLine(rawInputString);
         sw.WriteLine(timeToFirstKeyPress);
