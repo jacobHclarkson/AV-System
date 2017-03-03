@@ -1782,7 +1782,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.14, y: -0.88}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 956, y: 538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704584329
@@ -4006,6 +4006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 704584327}
+  reticle: {fileID: 2013959873}
   textPrompt: {fileID: 1112958532}
   imageObj: {fileID: 551395566}
   image: {fileID: 551395568}

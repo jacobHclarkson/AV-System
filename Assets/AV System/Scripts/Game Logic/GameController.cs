@@ -7,6 +7,9 @@ public class GameController : MonoBehaviour {
     // HUD canvas
     public GameObject hud;
 
+    // Reticle
+    public GameObject reticle;
+
     // text display
     public Text textPrompt;
 
@@ -34,7 +37,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            ToggleActive(imageObj);
+            ToggleActive(reticle);
         }
 	}
 
