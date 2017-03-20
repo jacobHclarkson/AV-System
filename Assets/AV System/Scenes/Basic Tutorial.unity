@@ -4042,6 +4042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 704584327}
+  promptObj: {fileID: 1664754326}
   reticle: {fileID: 2013959873}
   textPrompt: {fileID: 1112958532}
   imageObj: {fileID: 551395566}
@@ -4051,7 +4052,7 @@ MonoBehaviour:
   buttonB: {fileID: 21300000, guid: 3f9b4395645ae6049b43a34a30188c77, type: 3}
   buttonX: {fileID: 21300000, guid: 63c91cf867dcdf748b2fbaf305e124bc, type: 3}
   buttonY: {fileID: 21300000, guid: 69e4940467431514fa07975e292b62fb, type: 3}
-  greenLookTarget: {fileID: 2099602534}
+  leftCube: {fileID: 2099602534}
 --- !u!4 &1566849757
 Transform:
   m_ObjectHideFlags: 0
