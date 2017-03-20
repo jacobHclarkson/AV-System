@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour {
 
     // look targets
     public GameObject leftCube;
+    public GameObject rightCube;
 
     // move targets
 
@@ -34,13 +35,17 @@ public class GameController : MonoBehaviour {
     private string prompt_0 = "Hello! Welcome to the tutorial stage. In this tutorial, you will learn how to move and interact in VR. Press the 'A' button on your controller to continue.";
     private string prompt_1 = "To look around, turn your head. Look at the red cube to your left until it turns green. First, dismiss this message by pressing 'A'.";
     private string prompt_2 = "Excellent! Now look at the red cube on your right until it turns green. First, dismiss this message by pressing 'A'.";
-    private string prompt_3 = "";
+    private string prompt_3 = "Great. Now lets try moving around.";
     private string prompt_4 = "";
     private string prompt_5 = "";
     private string prompt_6 = "";
 
-    // bool to control coroutines
+    // bools and things to control coroutines
     private int tutorialStage = 0;
+    bool one = true;
+    bool two = true;
+    bool three = false;
+    bool four = false;
 
 	// Use this for initialization
 	void Start () {
@@ -49,25 +54,42 @@ public class GameController : MonoBehaviour {
         SetImageDisplay(buttonA);
 
         // first message transition
-        StartCoroutine(WaitForInputMessage("Jump", prompt_1)); // TODO change jump to A
+        StartCoroutine(WaitForInputMessage("Jump", prompt_1)); // 1
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        // second message transition
-        if (tutorialStage == 1)
+        // look at green cube on left
+        if (tutorialStage == 1 && one)
         {
-            StartCoroutine(WaitForInputToggle("Jump", imageObj)); // 2
-            StartCoroutine(WaitForInputToggle("Jump", leftCube)); // 3
-            StartCoroutine(WaitForInputToggle("Jump", promptObj)); // 4
+            one = false;
+            StartCoroutine(StageOne()); // 2
         }
 
-        // if the cube is green now
-        if(leftCube.GetComponent<Renderer>().material.color == Color.green)
+
+        if(leftCube.GetComponent<Renderer>().material.color == Color.green && two)
         {
-            // bring next message to look at cube on other side
+            Debug.Log("In here");
+            two = false;
+            ToggleActive(promptObj);
+            ToggleActive(imageObj);
+            SetTextDisplay(prompt_2);
+            three = true;
         }
 
+        // look at right green cube
+        if (three)
+        {
+            three = false;
+            StartCoroutine(StageTwo());
+        }
+
+        if (rightCube.GetComponent<Renderer>().material.color == Color.green && four)
+        {
+            four = false;
+            ToggleActive(promptObj);
+            SetTextDisplay(prompt_3);
+        }
 	}
 
     // Activate/Deactivate Gameobject
@@ -136,6 +158,41 @@ public class GameController : MonoBehaviour {
             {
                 tutorialStage++;
                 ToggleActive(obj);
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+
+
+    // new system
+    IEnumerator StageOne()
+    {
+        while (true)
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                ToggleActive(imageObj);
+                ToggleActive(leftCube);
+                ToggleActive(promptObj);
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator StageTwo()
+    {
+        while (true)
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                ToggleActive(imageObj);
+                ToggleActive(leftCube);
+                ToggleActive(rightCube);
+                ToggleActive(promptObj);
+                four = true;
                 yield break;
             }
             yield return null;
