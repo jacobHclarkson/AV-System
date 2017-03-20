@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour {
 
     // messages
     private string prompt_0 = "Hello! Welcome to the tutorial stage. In this tutorial, you will learn how to move and interact in VR. Press the 'A' button on your controller to continue.";
-    private string prompt_1 = "";
+    private string prompt_1 = "It is working.";
     private string prompt_2 = "";
     private string prompt_3 = "";
     private string prompt_4 = "";
@@ -41,22 +41,11 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         LookTutorial();
-        //SetTextDisplay("It's working!");
-        //ToggleActive(greenLookTarget);
-        //SetImageDisplay(allButtons);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        //if (Input.GetKeyDown(KeyCode.Return))
-        //{
-        //    ToggleActive(reticle);
-        //}
-        if (Input.GetButtonDown("A Button"))
-        {
-            Debug.Log("a button pressed");
 
-        }
 	}
 
     // Activate/Deactivate Gameobject
@@ -91,10 +80,23 @@ public class GameController : MonoBehaviour {
         SetTextDisplay(prompt_0);
         SetImageDisplay(buttonA);
 
+
         // when A is pressed, show next message
-        if (Input.GetButtonDown("A Button"))
+        StartCoroutine(WaitForInput("Jump", prompt_1));
+    }
+
+
+    // coroutine to wait for input and set correct message
+    IEnumerator WaitForInput(string inputToWaitFor, string nextMessage)
+    {
+        while (true)
         {
-            SetTextDisplay(prompt_2);
+            if(Input.GetButtonDown(inputToWaitFor))
+            {
+                SetTextDisplay(nextMessage);
+                yield break;
+            }
+            yield return null;
         }
     }
 }
