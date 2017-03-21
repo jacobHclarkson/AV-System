@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // look at green cube on left
+        // look at cube on left
         if (tutorialStage == 1 && one)
         {
             one = false;
@@ -69,7 +69,6 @@ public class GameController : MonoBehaviour {
 
         if(leftCube.GetComponent<Renderer>().material.color == Color.green && two)
         {
-            Debug.Log("In here");
             two = false;
             ToggleActive(promptObj);
             ToggleActive(imageObj);
@@ -77,7 +76,7 @@ public class GameController : MonoBehaviour {
             three = true;
         }
 
-        // look at right green cube
+        // look at cube on right
         if (three)
         {
             three = false;
@@ -90,6 +89,8 @@ public class GameController : MonoBehaviour {
             ToggleActive(promptObj);
             SetTextDisplay(prompt_3);
         }
+
+        // move to circle
 	}
 
     // Activate/Deactivate Gameobject
