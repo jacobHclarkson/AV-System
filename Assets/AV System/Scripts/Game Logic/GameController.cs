@@ -25,9 +25,11 @@ public class GameController : MonoBehaviour {
     public Sprite buttonX;
     public Sprite buttonY;
 
-    // look targets
+    // objectives
     public GameObject leftCube;
     public GameObject rightCube;
+    public GameObject frontCircle;
+    public GameObject backCircle;
 
     // move targets
 
@@ -35,10 +37,9 @@ public class GameController : MonoBehaviour {
     private string prompt_0 = "Hello! Welcome to the tutorial stage. In this tutorial, you will learn how to move and interact in VR. Press the 'A' button on your controller to continue.";
     private string prompt_1 = "To look around, turn your head. Look at the red cube to your left until it turns green. First, dismiss this message by pressing 'A'.";
     private string prompt_2 = "Excellent! Now look at the red cube on your right until it turns green. First, dismiss this message by pressing 'A'.";
-    private string prompt_3 = "Great. Now lets try moving around.";
-    private string prompt_4 = "";
-    private string prompt_5 = "";
-    private string prompt_6 = "";
+    private string prompt_3 = "Great. Now lets try moving around. To move, push the left analog stick forward or backward. Try moving into the red circle now.";
+    private string prompt_4 = "Well done. Now move to the red circle behind you.";
+    private string prompt_5 = "Very good. Now we'll learn how to interact with objects.";
 
     // bools and things to control coroutines
     private int tutorialStage = 0;
@@ -46,6 +47,11 @@ public class GameController : MonoBehaviour {
     bool two = true;
     bool three = false;
     bool four = false;
+    bool five = false;
+    bool six = false;
+    bool seven = false;
+    bool eight = false;
+    bool nine = false;
 
 	// Use this for initialization
 	void Start () {
@@ -87,10 +93,46 @@ public class GameController : MonoBehaviour {
         {
             four = false;
             ToggleActive(promptObj);
+            ToggleActive(imageObj);
             SetTextDisplay(prompt_3);
+            five = true;
         }
 
-        // move to circle
+        // move to front circle
+        if (five)
+        {
+            five = false;
+            StartCoroutine(StageThree());
+        }
+
+        if (six)
+        {
+            six = false;
+            StartCoroutine(StageFour());
+        }
+
+        if (seven)
+        {
+            seven = false;
+            ToggleActive(imageObj);
+            ToggleActive(promptObj);
+            SetTextDisplay(prompt_4);
+            eight = true;
+        }
+
+        // move to back circle
+        if (eight)
+        {
+            eight = false;
+            StartCoroutine(StageFive());
+        }
+
+        if (nine)
+        {
+            // something
+            nine = false;
+            StartCoroutine(StageSix());
+        }
 	}
 
     // Activate/Deactivate Gameobject
@@ -194,6 +236,68 @@ public class GameController : MonoBehaviour {
                 ToggleActive(rightCube);
                 ToggleActive(promptObj);
                 four = true;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator StageThree()
+    {
+        while (true)
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                ToggleActive(imageObj);
+                ToggleActive(rightCube);
+                ToggleActive(promptObj);
+                ToggleActive(frontCircle);
+                six = true;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator StageFour()
+    {
+        while (true)
+        {
+            if(frontCircle.GetComponent<Collideable>().triggered)
+            {
+                seven = true;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator StageFive()
+    {
+        while (true)
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                ToggleActive(imageObj);
+                ToggleActive(promptObj);
+                ToggleActive(frontCircle);
+                ToggleActive(backCircle);
+                nine = true;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator StageSix()
+    {
+        while (true)
+        {
+            if(backCircle.GetComponent<Collideable>().triggered)
+            {
+                ToggleActive(imageObj);
+                ToggleActive(promptObj);
+                SetTextDisplay(prompt_5);
                 yield break;
             }
             yield return null;
