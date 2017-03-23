@@ -197,7 +197,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 86931890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd02df6302ca8f449068300cd18dc08, type: 3}
   m_Name: 
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Camera: {fileID: 86931891}
   m_ExclusionLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_Reticle: {fileID: 86931898}
   m_VrInput: {fileID: 86931900}
   m_ShowDebugRay: 1
@@ -4707,7 +4707,7 @@ GameObject:
   - 212: {fileID: 1719213973}
   - 135: {fileID: 1719213975}
   - 114: {fileID: 1719213974}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,7 +4853,7 @@ GameObject:
   - 212: {fileID: 1727932761}
   - 135: {fileID: 1727932760}
   - 114: {fileID: 1727932759}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}

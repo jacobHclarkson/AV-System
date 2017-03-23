@@ -129,10 +129,11 @@ public class GameController : MonoBehaviour {
 
         if (nine)
         {
-            // something
             nine = false;
             StartCoroutine(StageSix());
         }
+
+        // interact with an object
 	}
 
     // Activate/Deactivate Gameobject
@@ -175,7 +176,6 @@ public class GameController : MonoBehaviour {
         // activate cube
         // next message
     }
-
 
     // coroutine to wait for input and set correct message
     IEnumerator WaitForInputMessage(string inputToWaitFor, string nextMessage)
