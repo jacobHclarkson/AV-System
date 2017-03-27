@@ -21,7 +21,6 @@ public class Collideable : MonoBehaviour {
         if(other == player)
         {
             triggered = true;
-            GetComponent<SpriteRenderer>().color = Color.green;
         }
     }
 }
