@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour {
     public GameObject rightCube;
     public GameObject frontCircle;
     public GameObject backCircle;
+    public GameObject button;
 
     // move targets
 
@@ -39,7 +40,8 @@ public class GameController : MonoBehaviour {
     private string prompt_2 = "Excellent! Now look at the red cube on your right until it turns green. First, dismiss this message by pressing 'A'.";
     private string prompt_3 = "Great. Now lets try moving around. To move, push the left analog stick forward or backward. Try moving into the red circle now.";
     private string prompt_4 = "Well done. Now move to the red circle behind you.";
-    private string prompt_5 = "Very good. Now we'll learn how to interact with objects.";
+    private string prompt_5 = "Very good. Now we'll learn how to interact with objects. Walk over to the red button and press 'A' to activate it.";
+    private string prompt_6 = "That's it for the tutorial. Press 'A' to exit.";
 
     // bools and things to control coroutines
     private int tutorialStage = 0;
@@ -52,6 +54,9 @@ public class GameController : MonoBehaviour {
     bool seven = false;
     bool eight = false;
     bool nine = false;
+    bool ten = false;
+    bool eleven = false;
+    bool twelve = true;
 
 	// Use this for initialization
 	void Start () {
@@ -65,13 +70,13 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         // look at cube on left
         if (tutorialStage == 1 && one)
         {
             one = false;
             StartCoroutine(StageOne()); // 2
         }
-
 
         if(leftCube.GetComponent<Renderer>().material.color == Color.green && two)
         {
@@ -134,6 +139,26 @@ public class GameController : MonoBehaviour {
         }
 
         // interact with an object
+        if(ten)
+        {
+            ten = false;
+            StartCoroutine(StageSeven());
+        }
+
+        if (eleven && button.GetComponentInChildren<Button>().pushed)
+        {
+            eleven = false;
+            ToggleActive(promptObj);
+            SetTextDisplay(prompt_6);
+            twelve = true;
+        }
+        if (twelve)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                Application.Quit();
+            }
+        }
 	}
 
     // Activate/Deactivate Gameobject
@@ -168,13 +193,9 @@ public class GameController : MonoBehaviour {
         SetTextDisplay(prompt_0);
         SetImageDisplay(buttonA);
 
-
         // when A is pressed, show next message
         StartCoroutine(WaitForInputMessage("Jump", prompt_1)); // TODO change jump to A
 
-        // dismiss message
-        // activate cube
-        // next message
     }
 
     // coroutine to wait for input and set correct message
@@ -298,6 +319,24 @@ public class GameController : MonoBehaviour {
                 ToggleActive(imageObj);
                 ToggleActive(promptObj);
                 SetTextDisplay(prompt_5);
+                ten = true;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator StageSeven()
+    {
+        while (true)
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                ToggleActive(promptObj);
+                ToggleActive(imageObj);
+                ToggleActive(button);
+                ToggleActive(backCircle);
+                eleven = true;
                 yield break;
             }
             yield return null;

@@ -11,7 +11,7 @@ public class Button : MonoBehaviour {
     Vector3 startPosition;
     Vector3 pushedPosition;
 
-    bool pushed = false;
+    public bool pushed = false;
 
     // Use this for initialization
     void Start () {

@@ -9,7 +9,7 @@ public class Ring : MonoBehaviour {
 	void Update () {
         if (col.triggered)
         {
-            GetComponent<Renderer>().material.color = Color.green;
+            GetComponent<SpriteRenderer>().color = Color.green;
         }
 	}
 }
