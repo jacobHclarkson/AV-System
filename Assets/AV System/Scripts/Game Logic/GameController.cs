@@ -41,7 +41,16 @@ public class GameController : MonoBehaviour {
     private string prompt_3 = "Great. Now lets try moving around. To move, push the left analog stick forward or backward. Try moving into the red circle now.";
     private string prompt_4 = "Well done. Now move to the red circle behind you.";
     private string prompt_5 = "Very good. Now we'll learn how to interact with objects. Walk over to the red button and press 'A' to activate it.";
+
+    /// <summary>
+    /// // AV PART OF TUTORIAL
+    /// </summary>
+
     private string prompt_6 = "That's it for the tutorial. Press 'A' to exit.";
+
+    /// <summary>
+    /// //
+    /// </summary>
 
     // bools and things to control coroutines
     private int tutorialStage = 0;
@@ -342,4 +351,16 @@ public class GameController : MonoBehaviour {
             yield return null;
         }
     }
+
+    /// <summary>
+    /// // AV PART OF TUTORIAL
+    /// </summary>
+
+    // activate AV system
+    // bla bla method here to do last part of tutorial (just a diagram 
+    // of what to do with hands and let them do whatever until they feel comfortable)
+
+    /// <summary>
+    /// //
+    /// </summary>
 }
