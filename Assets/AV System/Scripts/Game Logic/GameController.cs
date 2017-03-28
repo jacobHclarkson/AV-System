@@ -4,6 +4,15 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+    // BASIC OR AV TUTORIAL
+    private bool basic = false;
+
+    // AV elements
+    public GameObject leftViewport;
+    public GameObject rightViewport;
+    public GameObject webCamScreen;
+    public GameObject leapSpace;
+
     // HUD canvas
     public GameObject hud;
     public GameObject promptObj;
@@ -34,23 +43,17 @@ public class GameController : MonoBehaviour {
 
     // move targets
 
-    // messages
+    // basic messages
     private string prompt_0 = "Hello! Welcome to the tutorial stage. In this tutorial, you will learn how to move and interact in VR. Press the 'A' button on your controller to continue.";
     private string prompt_1 = "To look around, turn your head. Look at the red cube to your left until it turns green. First, dismiss this message by pressing 'A'.";
     private string prompt_2 = "Excellent! Now look at the red cube on your right until it turns green. First, dismiss this message by pressing 'A'.";
     private string prompt_3 = "Great. Now lets try moving around. To move, push the left analog stick forward or backward. Try moving into the red circle now.";
     private string prompt_4 = "Well done. Now move to the red circle behind you.";
     private string prompt_5 = "Very good. Now we'll learn how to interact with objects. Walk over to the red button and press 'A' to activate it.";
-
-    /// <summary>
-    /// // AV PART OF TUTORIAL
-    /// </summary>
-
     private string prompt_6 = "That's it for the tutorial. Press 'A' to exit.";
 
-    /// <summary>
-    /// //
-    /// </summary>
+    // av messages
+    private string prompt_7 = "Now you will learn to see through the device you are wearing into the real world.";
 
     // bools and things to control coroutines
     private int tutorialStage = 0;
@@ -74,7 +77,7 @@ public class GameController : MonoBehaviour {
         SetImageDisplay(buttonA);
 
         // first message transition
-        StartCoroutine(WaitForInputMessage("Jump", prompt_1)); // 1
+        StartCoroutine(WaitForInputMessage("A Button", prompt_1)); // 1
 	}
 	
 	// Update is called once per frame
@@ -156,14 +159,30 @@ public class GameController : MonoBehaviour {
 
         if (eleven && button.GetComponentInChildren<Button>().pushed)
         {
-            eleven = false;
-            ToggleActive(promptObj);
-            SetTextDisplay(prompt_6);
-            twelve = true;
+            if (basic)
+            {
+                eleven = false;
+                ToggleActive(promptObj);
+                SetTextDisplay(prompt_6);
+                twelve = true;
+            }
+            else
+            {
+                // AV STUFF
+                eleven = false;
+                ToggleActive(promptObj);
+                SetTextDisplay(prompt_7);
+                ToggleActive(leftViewport);
+                ToggleActive(rightViewport);
+                ToggleActive(leapSpace);
+                ToggleActive(webCamScreen);
+                twelve = true;
+            }
         }
+
         if (twelve)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("A Button"))
             {
                 Application.Quit();
             }
@@ -203,7 +222,7 @@ public class GameController : MonoBehaviour {
         SetImageDisplay(buttonA);
 
         // when A is pressed, show next message
-        StartCoroutine(WaitForInputMessage("Jump", prompt_1)); // TODO change jump to A
+        StartCoroutine(WaitForInputMessage("A Button", prompt_1));
 
     }
 
@@ -244,7 +263,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetButtonDown("A Button"))
             {
                 ToggleActive(imageObj);
                 ToggleActive(leftCube);
@@ -259,7 +278,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetButtonDown("A Button"))
             {
                 ToggleActive(imageObj);
                 ToggleActive(leftCube);
@@ -276,7 +295,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetButtonDown("A Button"))
             {
                 ToggleActive(imageObj);
                 ToggleActive(rightCube);
@@ -306,7 +325,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetButtonDown("A Button"))
             {
                 ToggleActive(imageObj);
                 ToggleActive(promptObj);
@@ -339,7 +358,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("Jump"))
+            if(Input.GetButtonDown("A Button"))
             {
                 ToggleActive(promptObj);
                 ToggleActive(imageObj);
