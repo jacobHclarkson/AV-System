@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour {
     private string prompt_6 = "That's it for the tutorial. Press 'A' to exit.";
 
     // av messages
-    private string prompt_7 = "Now you will learn to see through the device you are wearing into the real world. Dismiss this message and hold your hands in front of your face as shown. Try this a few times until you are confortable, then press 'A' on the controller to quit the tutorial.";
+    private string prompt_7 = "Now you will learn to see through the HMD you are wearing into the real world. Dismiss this message and hold your hands in front of your face as shown. Try this a few times until you are confortable, then remove the HMD.";
 
     // bools and things to control coroutines
     private int tutorialStage = 0;
@@ -212,13 +212,6 @@ public class GameController : MonoBehaviour {
             }
         }
 
-        if (thirteen)
-        {
-            if(Input.GetButtonDown(inputString))
-            {
-                Application.Quit();
-            }
-        }
 	}
 
     // Activate/Deactivate Gameobject
