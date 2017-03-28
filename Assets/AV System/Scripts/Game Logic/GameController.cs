@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
     private bool basic = false;
 
     // TESTING OR NO (controller vs keyboard)
-    private bool testing = true;
+    private bool testing = false;
     private string inputString;
 
     // AV elements
@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour {
     // image display
     public GameObject imageObj;
     public Image image;
+    public GameObject hands;
 
     // textures for image display
     public Sprite allButtons;
@@ -57,7 +58,7 @@ public class GameController : MonoBehaviour {
     private string prompt_6 = "That's it for the tutorial. Press 'A' to exit.";
 
     // av messages
-    private string prompt_7 = "Now you will learn to see through the device you are wearing into the real world.";
+    private string prompt_7 = "Now you will learn to see through the device you are wearing into the real world. Dismiss this message and hold your hands in front of your face as shown. Try this a few times until you are confortable, then press 'A' on the controller to quit the tutorial.";
 
     // bools and things to control coroutines
     private int tutorialStage = 0;
@@ -72,7 +73,8 @@ public class GameController : MonoBehaviour {
     bool nine = false;
     bool ten = false;
     bool eleven = false;
-    bool twelve = true;
+    bool twelve = false;
+    bool thirteen = false;
 
 	// Use this for initialization
 	void Start () {
@@ -185,10 +187,11 @@ public class GameController : MonoBehaviour {
                 eleven = false;
                 ToggleActive(promptObj);
                 SetTextDisplay(prompt_7);
-                ToggleActive(webCamScreen);
-                ToggleActive(leapSpace);
-                ToggleActive(leftViewport);
-                ToggleActive(rightViewport);
+                //ToggleActive(webCamScreen);
+                //ToggleActive(leapSpace);
+                //ToggleActive(leftViewport);
+                //ToggleActive(rightViewport);
+                ToggleActive(hands);
                 twelve = true;
             }
         }
@@ -196,6 +199,22 @@ public class GameController : MonoBehaviour {
         if (twelve)
         {
             if (Input.GetButtonDown(inputString))
+            {
+                if (basic)
+                {
+                    Application.Quit();
+                }
+                else
+                {
+                    StartCoroutine(StageEight());
+                    twelve = false;
+                }
+            }
+        }
+
+        if (thirteen)
+        {
+            if(Input.GetButtonDown(inputString))
             {
                 Application.Quit();
             }
@@ -392,6 +411,24 @@ public class GameController : MonoBehaviour {
     // bla bla method here to do last part of tutorial (just a diagram 
     // of what to do with hands and let them do whatever until they feel comfortable)
 
+    IEnumerator StageEight()
+    {
+        while (true)
+        {
+            if(Input.GetButtonDown(inputString))
+            {
+                ToggleActive(promptObj);
+                ToggleActive(hands);
+                ToggleActive(webCamScreen);
+                ToggleActive(leapSpace);
+                ToggleActive(leftViewport);
+                ToggleActive(rightViewport);
+                thirteen = true;
+                yield break;
+            }
+            yield return null;
+        }
+    }
     /// <summary>
     /// //
     /// </summary>

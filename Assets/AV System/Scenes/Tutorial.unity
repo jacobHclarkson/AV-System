@@ -3399,8 +3399,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.55, y: -65.47299}
-  m_SizeDelta: {x: 805.1, y: 130.94598}
+  m_AnchoredPosition: {x: 392.55, y: -65.923004}
+  m_SizeDelta: {x: 785.1, y: 131.84601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112958532
 MonoBehaviour:
@@ -3868,8 +3868,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405.55, y: -68.47299}
-  m_SizeDelta: {x: 805.1, y: 130.94598}
+  m_AnchoredPosition: {x: 395.55, y: -68.923004}
+  m_SizeDelta: {x: 785.1, y: 131.84601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380143900
 MonoBehaviour:
@@ -4055,7 +4055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1393725248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4593,6 +4593,7 @@ MonoBehaviour:
   textPrompt: {fileID: 1112958532}
   imageObj: {fileID: 551395566}
   image: {fileID: 551395568}
+  hands: {fileID: 1393725247}
   allButtons: {fileID: 21300000, guid: 5e1edbe9892f47e4c80bdba8b72fb38b, type: 3}
   buttonA: {fileID: 21300000, guid: 485b09c50761df94f8c3be989157e8a4, type: 3}
   buttonB: {fileID: 21300000, guid: 3f9b4395645ae6049b43a34a30188c77, type: 3}
@@ -4788,8 +4789,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.275, y: 0.41088107}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -123, y: 52}
-  m_SizeDelta: {x: 118, y: -180}
+  m_AnchoredPosition: {x: -123, y: 23.050014}
+  m_SizeDelta: {x: 98, y: -179.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664754328
 MonoBehaviour:
