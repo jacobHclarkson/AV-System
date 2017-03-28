@@ -7,6 +7,10 @@ public class GameController : MonoBehaviour {
     // BASIC OR AV TUTORIAL
     private bool basic = false;
 
+    // TESTING OR NO (controller vs keyboard)
+    private bool testing = true;
+    private string inputString;
+
     // AV elements
     public GameObject leftViewport;
     public GameObject rightViewport;
@@ -72,12 +76,21 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        if (testing)
+        {
+            inputString = "Jump";
+        }
+        else
+        {
+            inputString = "A Button";
+        }
+
         ToggleActive(hud);
         SetTextDisplay(prompt_0);
         SetImageDisplay(buttonA);
 
         // first message transition
-        StartCoroutine(WaitForInputMessage("A Button", prompt_1)); // 1
+        StartCoroutine(WaitForInputMessage(inputString, prompt_1)); // 1
 	}
 	
 	// Update is called once per frame
@@ -172,17 +185,17 @@ public class GameController : MonoBehaviour {
                 eleven = false;
                 ToggleActive(promptObj);
                 SetTextDisplay(prompt_7);
+                ToggleActive(webCamScreen);
+                ToggleActive(leapSpace);
                 ToggleActive(leftViewport);
                 ToggleActive(rightViewport);
-                ToggleActive(leapSpace);
-                ToggleActive(webCamScreen);
                 twelve = true;
             }
         }
 
         if (twelve)
         {
-            if (Input.GetButtonDown("A Button"))
+            if (Input.GetButtonDown(inputString))
             {
                 Application.Quit();
             }
@@ -222,7 +235,7 @@ public class GameController : MonoBehaviour {
         SetImageDisplay(buttonA);
 
         // when A is pressed, show next message
-        StartCoroutine(WaitForInputMessage("A Button", prompt_1));
+        StartCoroutine(WaitForInputMessage(inputString, prompt_1));
 
     }
 
@@ -263,7 +276,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("A Button"))
+            if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
                 ToggleActive(leftCube);
@@ -278,7 +291,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("A Button"))
+            if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
                 ToggleActive(leftCube);
@@ -295,7 +308,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("A Button"))
+            if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
                 ToggleActive(rightCube);
@@ -325,7 +338,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("A Button"))
+            if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
                 ToggleActive(promptObj);
@@ -358,7 +371,7 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
-            if(Input.GetButtonDown("A Button"))
+            if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(promptObj);
                 ToggleActive(imageObj);

@@ -22,7 +22,7 @@ public class Button : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (m_Item.IsOver && Input.GetButtonDown("A Button") && col.triggered)
+        if (m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")) && col.triggered)
         {
             pushed = true;
 
