@@ -98,6 +98,12 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Toggle prompt (in case user forgets what they are meant to be doing)
+        if(Input.GetButtonDown("B Button"))
+        {
+            ToggleActive(promptObj);
+        }
+
         // look at cube on left
         if (tutorialStage == 1 && one)
         {
@@ -226,8 +232,6 @@ public class GameController : MonoBehaviour {
             obj.SetActive(true);
         }
     }
-
-    //
 
     // Change content of text display
     void SetTextDisplay(string str)
