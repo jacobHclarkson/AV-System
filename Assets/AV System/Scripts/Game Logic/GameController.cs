@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
     private bool basic = false;
 
     // TESTING OR NO (controller vs keyboard)
-    private bool testing = false;
+    private bool testing = true;
     private string inputString;
 
     // AV elements
@@ -226,6 +226,8 @@ public class GameController : MonoBehaviour {
             obj.SetActive(true);
         }
     }
+
+    //
 
     // Change content of text display
     void SetTextDisplay(string str)
