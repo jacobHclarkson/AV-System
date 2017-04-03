@@ -4583,6 +4583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb83d44e0faa4e741a4dd388c4af5812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basic: 0
+  testing: 1
   leftViewport: {fileID: 710742907}
   rightViewport: {fileID: 469342307}
   webCamScreen: {fileID: 276385304}

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
     // BASIC OR AV TUTORIAL
-    private bool basic = false;
+    public bool basic = true;
 
     // TESTING OR NO (controller vs keyboard)
-    private bool testing = true;
+    public bool testing = false;
     private string inputString;
 
     // AV elements
@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour {
     private string prompt_7 = "Now you will learn to see through the HMD you are wearing into the real world. Dismiss this message and hold your hands in front of your face as shown. Try this a few times until you are confortable, then remove the HMD.";
 
     // bools and things to control coroutines
+    bool quit = false;
     private int tutorialStage = 0;
     bool one = true;
     bool two = true;
@@ -94,9 +95,17 @@ public class GameController : MonoBehaviour {
         // first message transition
         StartCoroutine(WaitForInputMessage(inputString, prompt_1)); // 1
 	}
+
+    void OnApplicationQuit()
+    {
+        quit = true;
+    }
+
 	
 	// Update is called once per frame
 	void Update () {
+        //if(UnityEditor.EditorApplication.isPlaying == false)
+        //    quit = true;
 
         // Toggle prompt (in case user forgets what they are meant to be doing)
         if(Input.GetButtonDown("B Button"))
@@ -262,6 +271,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputToWaitFor))
             {
                 SetTextDisplay(nextMessage);
@@ -277,6 +288,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputToWaitFor))
             {
                 tutorialStage++;
@@ -294,6 +307,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
@@ -309,6 +324,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
@@ -326,6 +343,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
@@ -343,6 +362,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(frontCircle.GetComponent<Collideable>().triggered)
             {
                 seven = true;
@@ -356,6 +377,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(imageObj);
@@ -373,6 +396,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(backCircle.GetComponent<Collideable>().triggered)
             {
                 ToggleActive(imageObj);
@@ -389,6 +414,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(promptObj);
@@ -414,6 +441,8 @@ public class GameController : MonoBehaviour {
     {
         while (true)
         {
+            if (quit)
+                yield break;
             if(Input.GetButtonDown(inputString))
             {
                 ToggleActive(promptObj);
