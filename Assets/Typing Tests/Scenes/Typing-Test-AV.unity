@@ -475,7 +475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &122902352
 Transform:
   m_ObjectHideFlags: 0
@@ -2187,7 +2187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &826073687
 Transform:
   m_ObjectHideFlags: 0
@@ -2714,7 +2714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handedness: Right
   target: {fileID: 1646909463}
-  hand: {fileID: 1929156531}
+  hand: {fileID: 122902351}
 --- !u!23 &966868966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2837,7 +2837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &974397983
 Transform:
   m_ObjectHideFlags: 0
@@ -4470,7 +4470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handedness: Left
   target: {fileID: 1646909463}
-  hand: {fileID: 974397982}
+  hand: {fileID: 826073686}
 --- !u!114 &1712931044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4731,7 +4731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1929156532
 Transform:
   m_ObjectHideFlags: 0
