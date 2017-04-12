@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/AV System/Scenes/AV Prototype.unity
   - enabled: 0
     path: Assets/z_misc/Test Scenes/Tests/Environments/Env1.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Typing Tests/Scenes/Typing-Test-AV.unity
   - enabled: 0
     path: Assets/Typing Tests/Scenes/Typing-Test-VR.unity
   - enabled: 0
     path: Assets/AV System/Scenes/Basic Tutorial.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/AV System/Scenes/Tutorial.unity
