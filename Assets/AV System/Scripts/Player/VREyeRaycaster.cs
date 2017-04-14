@@ -25,7 +25,7 @@ namespace VRStandardAssets.Utils
         private VRInteractiveItem m_CurrentInteractible;                //The current interactive item
         private VRInteractiveItem m_LastInteractible;                   //The last interactive item
 
-
+        public bool testing = false;
         // Utility for other classes to get the current interactive item
         public VRInteractiveItem CurrentInteractible
         {
@@ -75,7 +75,10 @@ namespace VRStandardAssets.Utils
             {
 
                 // Print name of hit object to console
-                //Debug.Log(hit.collider.gameObject.name);
+                if (testing)
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                }
 
                 VRInteractiveItem interactible = hit.collider.GetComponent<VRInteractiveItem>(); //attempt to get the VRInteractiveItem on the hit object
                 m_CurrentInteractible = interactible;
@@ -101,7 +104,10 @@ namespace VRStandardAssets.Utils
             {
 
                 // Print name of hit object to console
-                //Debug.Log(hit.collider.gameObject.name);
+                if(testing)
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                }
 
 
                 // Nothing was hit, deactive the last interactive item.
