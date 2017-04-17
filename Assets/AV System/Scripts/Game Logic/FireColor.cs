@@ -9,11 +9,10 @@ public class FireColor : MonoBehaviour {
     [SerializeField] ParticleSystem sparks;
     [SerializeField] private VRInteractiveItem m_Item;
 
-    Color[] colorArray = { Color.red, Color.green, Color.yellow };
+    Color[] colorArray = { Color.red, Color.green, Color.yellow};
     int current = 0;
 	// Use this for initialization
 	void Start () {
-        Debug.Log(colorArray.Length);
         	
 	}
 	
