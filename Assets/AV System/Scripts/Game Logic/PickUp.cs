@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour {
 
     [SerializeField] VRInteractiveItem item;
     [SerializeField] Camera mainCamera;
+    [SerializeField] ProximityChecker proximityChecker;
 
     bool holding = false;
 
@@ -13,14 +14,12 @@ public class PickUp : MonoBehaviour {
 
     Rigidbody rb;
 
-	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();	
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        if (item.IsOver && !holding && Input.GetButtonDown("Jump"))
+        if (proximityChecker.inProximity && item.IsOver && !holding && Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button"))
         {
             transform.parent = mainCamera.transform;
             rb.isKinematic = true;
@@ -32,7 +31,7 @@ public class PickUp : MonoBehaviour {
             minHoldTime -= Time.deltaTime;
         }
 
-        if(holding && minHoldTime <= 0.0f && Input.GetButtonDown("Jump"))
+        if(holding && minHoldTime <= 0.0f && Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button"))
         {
             transform.parent = null;
             rb.isKinematic = false;

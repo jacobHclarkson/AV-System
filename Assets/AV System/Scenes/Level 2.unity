@@ -6167,6 +6167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7d003bcba2e7d4aab1ecdec13f588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &687343423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687343421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5da619ade4a93942a48bbccc7075531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1784111785}
+  requiredDistance: 2
+  inProximity: 0
 --- !u!4 &687343425 stripped
 Transform:
   m_PrefabParentObject: {fileID: 494778, guid: 7eeab1ff30a0ae24da47ab7fdb9de466, type: 2}
@@ -6184,6 +6198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 687343422}
   mainCamera: {fileID: 1784111787}
+  proximityChecker: {fileID: 687343423}
 --- !u!54 &687343428
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13453,6 +13468,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 1010287683}
   mainCamera: {fileID: 1784111787}
+  proximityChecker: {fileID: 1010287685}
+--- !u!114 &1010287685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010287680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5da619ade4a93942a48bbccc7075531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1784111785}
+  requiredDistance: 2
+  inProximity: 0
 --- !u!1 &1022474854
 GameObject:
   m_ObjectHideFlags: 0
@@ -20978,6 +21008,20 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 112300, guid: 3515349f69ae6d341b5f9e2eecdfb221, type: 2}
   m_PrefabInternal: {fileID: 520146683}
+--- !u!114 &1561328218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561328217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5da619ade4a93942a48bbccc7075531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1784111785}
+  requiredDistance: 2
+  inProximity: 0
 --- !u!65 &1561328220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21018,6 +21062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 1561328223}
   mainCamera: {fileID: 1784111787}
+  proximityChecker: {fileID: 1561328218}
 --- !u!114 &1561328223
 MonoBehaviour:
   m_ObjectHideFlags: 0
