@@ -10,6 +10,7 @@ public class LevelOneController : MonoBehaviour {
     [SerializeField] GameObject door;
 
     bool roomOneSolved = false;
+    bool allLightsOn = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,10 @@ public class LevelOneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!allLightsOn)
+        {
+            allLightsOn = LightsOn();
+        }
         if (!roomOneSolved)
         {
             CheckLights();
@@ -33,11 +38,24 @@ public class LevelOneController : MonoBehaviour {
     void CheckLights()
     {
         if (lightOne.color == Color.green &&
-            lightTwo.color == Color.green &&
-            lightThree.color == Color.green &&
-            lightFour.color == Color.green)
+            lightTwo.color == Color.red &&
+            lightThree.color == Color.yellow &&
+            lightFour.color == Color.green &&
+            allLightsOn)
         {
             roomOneSolved = true;
         }
+    }
+
+    bool LightsOn()
+    {
+        if (lightOne.isActiveAndEnabled &&
+            lightTwo.isActiveAndEnabled &&
+            lightThree.isActiveAndEnabled &&
+            lightFour.isActiveAndEnabled)
+        {
+            return true;
+        }
+        else return false;
     }
 }

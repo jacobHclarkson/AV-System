@@ -8,17 +8,24 @@ public class FireColor : MonoBehaviour {
     [SerializeField] ParticleSystem flames;
     [SerializeField] ParticleSystem sparks;
     [SerializeField] private VRInteractiveItem m_Item;
+    [SerializeField] GameObject fireObject;
+    [SerializeField] ProximityChecker proximityChecker;
+
 
     Color[] colorArray = { Color.red, Color.green, Color.yellow};
-    int current = 0;
+    int current = 1;
 	// Use this for initialization
 	void Start () {
-        	
+        SetColor(Color.green);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
+        if(proximityChecker.inProximity && !fireObject.activeSelf && m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
+        {
+            fireObject.SetActive(true);
+        }
+        if (fireObject.activeSelf && m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
             // cycle color of light, flame, and sparks
             CycleColors();
@@ -32,8 +39,11 @@ public class FireColor : MonoBehaviour {
         {
             current = 0;
         }
-        lights.color = colorArray[current];
-        flames.startColor = colorArray[current];
-        sparks.startColor = colorArray[current];
+        SetColor(colorArray[current]);
+    }
+
+    void SetColor(Color c)
+    {
+        lights.color = flames.startColor = sparks.startColor = c;
     }
 }
