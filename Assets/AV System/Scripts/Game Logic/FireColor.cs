@@ -14,12 +14,11 @@ public class FireColor : MonoBehaviour {
 
     Color[] colorArray = { Color.red, Color.green, Color.yellow};
     int current = 1;
-	// Use this for initialization
+
 	void Start () {
         SetColor(Color.green);
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if(proximityChecker.inProximity && !fireObject.activeSelf && m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
@@ -27,7 +26,6 @@ public class FireColor : MonoBehaviour {
         }
         if (fireObject.activeSelf && m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
-            // cycle color of light, flame, and sparks
             CycleColors();
         }
 	}

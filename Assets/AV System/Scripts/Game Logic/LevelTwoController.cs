@@ -9,7 +9,6 @@ public class LevelTwoController : MonoBehaviour {
 
     bool solved = false;
 	
-	// Update is called once per frame
 	void Update () {
         if (!solved)
         {

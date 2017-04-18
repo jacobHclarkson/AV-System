@@ -12,12 +12,6 @@ public class LevelOneController : MonoBehaviour {
     bool roomOneSolved = false;
     bool allLightsOn = false;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
 	void Update () {
         if (!allLightsOn)
         {
@@ -28,7 +22,6 @@ public class LevelOneController : MonoBehaviour {
             CheckLights();
         }
 
-        // rotate door
         if(roomOneSolved && door.transform.eulerAngles.y < 180.0f)
         {
             door.transform.Rotate(Vector3.up * Time.deltaTime * 10);
