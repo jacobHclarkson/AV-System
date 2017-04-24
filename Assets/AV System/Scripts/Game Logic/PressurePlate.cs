@@ -8,17 +8,29 @@ public class PressurePlate : MonoBehaviour {
 
     public bool on = false;
     public bool standing = false;
+
+    public float gateMax;
+    public float gateMin = 0.02f;
+
+    private Vector3 gateStartPosition;
+    private Vector3 buttonStartPosition;
+
+    void Start()
+    {
+        gateStartPosition = gate.transform.position;
+        buttonStartPosition = transform.position;
+    }
 	
 	void Update () {
         standing = CheckForPlayer();
         if (on || standing)
         {
-            if (transform.position.y > 0.02f)
+            if (transform.position.y > buttonStartPosition.y - 0.08)
             {
                 transform.Translate(Vector3.down * Time.deltaTime);
             }
 
-            if(gate.transform.position.y < 4.0f)
+            if(gate.transform.position.y < gateStartPosition.y + 3.9)
             {
                 gate.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
             }
@@ -26,12 +38,12 @@ public class PressurePlate : MonoBehaviour {
 
         if(!on && !standing)
         {
-            if (transform.position.y < 0.1f)
+            if (transform.position.y < buttonStartPosition.y)
             {
                 transform.Translate(Vector3.up * Time.deltaTime);
             }
 
-            if(gate.transform.position.y > 0f)
+            if(gate.transform.position.y > gateStartPosition.y)
             {
                 gate.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
             }
