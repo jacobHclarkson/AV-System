@@ -24,7 +24,7 @@ public class LevelOneController : MonoBehaviour {
 
         if(roomOneSolved && door.transform.eulerAngles.y < 180.0f)
         {
-            door.transform.Rotate(Vector3.up * Time.deltaTime * 10);
+            door.transform.Rotate(Vector3.up * Time.deltaTime * 20);
         }
 	}
 
