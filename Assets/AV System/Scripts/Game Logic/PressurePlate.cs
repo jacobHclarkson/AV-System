@@ -45,7 +45,7 @@ public class PressurePlate : MonoBehaviour {
 
             if(gate.transform.position.y > gateStartPosition.y)
             {
-                gate.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+                gate.transform.Translate(Vector3.down * Time.deltaTime * 5, Space.World);
             }
         }
 	}
