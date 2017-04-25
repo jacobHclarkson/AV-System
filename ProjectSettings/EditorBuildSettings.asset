@@ -7,13 +7,22 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/AV System/Scenes/AV Prototype.unity
+    guid: 74408f8e95edab342a8b565521df6a18
   - enabled: 0
     path: Assets/z_misc/Test Scenes/Tests/Environments/Env1.unity
-  - enabled: 1
+    guid: da04053593a3e5142be003987df4946e
+  - enabled: 0
     path: Assets/Typing Tests/Scenes/Typing-Test-AV.unity
+    guid: 5bd19936b60ab864d84769277dee730b
   - enabled: 0
     path: Assets/Typing Tests/Scenes/Typing-Test-VR.unity
+    guid: 2c2b77918e8c9f940a85535ed926137f
   - enabled: 0
     path: Assets/AV System/Scenes/Basic Tutorial.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/AV System/Scenes/Tutorial.unity
+    guid: e7fd8644fc5a46841973449083b348a9
+  - enabled: 1
+    path: Assets/AV System/Scenes/Intro Level.unity
+    guid: 1704124f37596e948baf5df8dfc78894

@@ -11,9 +11,12 @@ public class PressurePlate : MonoBehaviour {
 
     public float gateMax;
     public float gateMin = 0.02f;
+    public bool solved = false;
 
-    private Vector3 gateStartPosition;
+    public Vector3 gateStartPosition;
     private Vector3 buttonStartPosition;
+
+
 
     void Start()
     {
@@ -22,30 +25,33 @@ public class PressurePlate : MonoBehaviour {
     }
 	
 	void Update () {
-        standing = CheckForPlayer();
-        if (on || standing)
+        if (!solved)
         {
-            if (transform.position.y > buttonStartPosition.y - 0.08)
+            standing = CheckForPlayer();
+            if (on || standing)
             {
-                transform.Translate(Vector3.down * Time.deltaTime);
+                if (transform.position.y > buttonStartPosition.y - 0.08)
+                {
+                    transform.Translate(Vector3.down * Time.deltaTime);
+                }
+
+                if(gate.transform.position.y < gateStartPosition.y + 3.9)
+                {
+                    gate.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+                }
             }
 
-            if(gate.transform.position.y < gateStartPosition.y + 3.9)
+            if(!on && !standing)
             {
-                gate.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
-            }
-        }
+                if (transform.position.y < buttonStartPosition.y)
+                {
+                    transform.Translate(Vector3.up * Time.deltaTime);
+                }
 
-        if(!on && !standing)
-        {
-            if (transform.position.y < buttonStartPosition.y)
-            {
-                transform.Translate(Vector3.up * Time.deltaTime);
-            }
-
-            if(gate.transform.position.y > gateStartPosition.y)
-            {
-                gate.transform.Translate(Vector3.down * Time.deltaTime * 5, Space.World);
+                if(gate.transform.position.y > gateStartPosition.y)
+                {
+                    gate.transform.Translate(Vector3.down * Time.deltaTime * 5, Space.World);
+                }
             }
         }
 	}
