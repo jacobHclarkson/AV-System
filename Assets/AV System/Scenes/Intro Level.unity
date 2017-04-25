@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.64482754, g: 0.64482754, b: 0.64482754, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -1105,7 +1105,7 @@ TerrainCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 147432743}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 279cff0caf242e2469e55f6b9e47f025, type: 2}
   m_EnableTreeColliders: 1
@@ -1119,8 +1119,8 @@ Terrain:
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 279cff0caf242e2469e55f6b9e47f025, type: 2}
   m_TreeDistance: 2000
-  m_TreeBillboardDistance: 1000
-  m_TreeCrossFadeLength: 200
+  m_TreeBillboardDistance: 75
+  m_TreeCrossFadeLength: 40
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
@@ -28785,7 +28785,7 @@ MonoBehaviour:
   m_RunSpeed: 4
   m_RunstepLenghten: 1
   m_JumpSpeed: 7
-  m_StickToGroundForce: 1
+  m_StickToGroundForce: 0.5
   m_GravityMultiplier: 4
   m_MouseLook:
     XSensitivity: 2
@@ -32886,6 +32886,7 @@ GameObject:
   - component: {fileID: 982794685}
   - component: {fileID: 982794687}
   - component: {fileID: 982794686}
+  - component: {fileID: 982794688}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -32927,7 +32928,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 106.188
   orthographic: 0
@@ -33087,14 +33088,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982794672}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Radius: 0.4
   m_SampleCount: 1
-  m_OcclusionIntensity: 1.5
+  m_OcclusionIntensity: 0.75
   m_Blur: 2
   m_Downsampling: 2
   m_OcclusionAttenuation: 1
@@ -33107,7 +33108,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982794672}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
   m_Name: 
@@ -33257,7 +33258,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982794672}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32187365ced0c42219cde2b57c99b323, type: 3}
   m_Name: 
@@ -33266,12 +33267,31 @@ MonoBehaviour:
     threshold: 0.9
     softKnee: 0.5
     radius: 2
-    intensity: 0.7
+    intensity: 0.5
     highQuality: 1
-    antiFlicker: 0
+    antiFlicker: 1
     dirtTexture: {fileID: 0}
     dirtIntensity: 2.5
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
+--- !u!114 &982794688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982794672}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFog: 1
+  excludeFarPixels: 1
+  useRadialDistance: 0
+  heightFog: 1
+  height: 1
+  heightDensity: 2
+  startDistance: 100
+  fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!1 &984696154 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
@@ -37773,7 +37793,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -37781,13 +37801,13 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.7
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -53272,15 +53292,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.x
-      value: 344.72086
+      value: 1147.7698
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.y
-      value: 21.54501
+      value: 71.735466
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalScale.z
-      value: 344.72015
+      value: 1147.7675
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: reflectLayers.m_Bits
