@@ -25975,7 +25975,7 @@ MonoBehaviour:
   paintLayer: 0
   myGroupsBuiltIn:
   - {fileID: 0}
-  nbrGroupsCreated: 1
+  nbrGroupsCreated: 3
   myDistance: 3.759997
   mySpray: 5.44003
   myDelete: 7.620081
@@ -34342,19 +34342,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.05689889
+      value: 0.39718914
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.30759656
+      value: -0.61160886
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.4680543
+      value: 0.254073
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.82648176
+      value: -0.63531274
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_RootOrder
@@ -34366,7 +34366,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -34.93
+      value: -266.28
       objectReference: {fileID: 0}
     - target: {fileID: 451014, guid: d3c03b34cba106e4184d2bb279ed7103, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
