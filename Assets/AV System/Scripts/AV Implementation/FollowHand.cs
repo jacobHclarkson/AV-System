@@ -25,7 +25,6 @@ public class FollowHand : MonoBehaviour {
     void Start () {
         controller = new Controller();
         transform.position = new Vector3(-1000, -1000, -1000);
-        //renderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
