@@ -7,6 +7,7 @@ public class LionDoor : MonoBehaviour {
     [SerializeField] VRStandardAssets.Utils.VRInteractiveItem vrItem;
     [SerializeField] Inventory playerInventory;
     [SerializeField] GameObject key;
+    [SerializeField] GameObject lionKey;
 
     private float originalRotation;
     bool unlocked = false;
@@ -20,7 +21,7 @@ public class LionDoor : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	    if(prox.inProximity && vrItem.IsOver && playerInventory.hasLionKey && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
+	    if(prox.inProximity && vrItem.IsOver && playerInventory.HasItem(lionKey) && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
             unlocked = true;
             key.SetActive(true);

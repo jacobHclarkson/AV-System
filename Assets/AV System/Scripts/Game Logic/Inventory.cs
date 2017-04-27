@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-    public bool hasLionKey = false;
+    public List<GameObject> items;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void AddItem(GameObject item)
+    {
+        items.Add(item);
+    }
+
+    public bool HasItem(GameObject item)
+    {
+        if (items.Contains(item))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -12,14 +12,13 @@ public class Collectible : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (proxCheck.inProximity && interactiveItem.IsOver && (Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button")))
         {
-            inventory.hasLionKey = true;
+            inventory.AddItem(this.gameObject);
             rend.enabled = false;
         }	
 	}
