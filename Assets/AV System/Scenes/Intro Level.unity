@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.64482754, g: 0.64482754, b: 0.64482754, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -1509,10 +1509,10 @@ RectTransform:
   m_Father: {fileID: 123184010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 268.55, y: -46.423004}
-  m_SizeDelta: {x: 537.1, y: 92.84601}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &65708793
 MonoBehaviour:
@@ -6072,10 +6072,10 @@ RectTransform:
   m_Father: {fileID: 723392900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 271.55, y: -49.423004}
-  m_SizeDelta: {x: 537.1, y: 92.84601}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123184011
 MonoBehaviour:
@@ -32602,6 +32602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446829473}
   - component: {fileID: 446829474}
+  - component: {fileID: 446829475}
   m_Layer: 0
   m_Name: FireRoom
   m_TagString: Untagged
@@ -32640,6 +32641,19 @@ MonoBehaviour:
   lightThree: {fileID: 888872159}
   lightFour: {fileID: 2055209406}
   door: {fileID: 201332494}
+  messageController: {fileID: 2011524604}
+--- !u!65 &446829475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446829472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.7312155, y: 6.2883663, z: 9.079905}
+  m_Center: {x: 6.8956075, y: 4.2781515, z: -2.9249525}
 --- !u!1001 &447733964
 Prefab:
   m_ObjectHideFlags: 0
@@ -42707,7 +42721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &586569669
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42723,7 +42737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 222.35, y: 92.22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586569670
@@ -42745,7 +42759,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3f9b4395645ae6049b43a34a30188c77, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -46817,6 +46831,10 @@ Prefab:
     - target: {fileID: 100000, guid: 8eaac18273479cf4fa36fcd612157570, type: 3}
       propertyPath: m_Name
       value: Dragon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8eaac18273479cf4fa36fcd612157570, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eaac18273479cf4fa36fcd612157570, type: 3}
@@ -54392,7 +54410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &723392900
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63123,7 +63141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 2
+  m_WalkSpeed: 10
   m_RunSpeed: 4
   m_RunstepLenghten: 1
   m_JumpSpeed: 7
@@ -81168,6 +81186,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90230.14
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8eaac18273479cf4fa36fcd612157570, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eaac18273479cf4fa36fcd612157570, type: 3}
   m_IsPrefabParent: 0
@@ -97703,8 +97725,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -232.31}
-  m_SizeDelta: {x: 707.63, y: 505.7}
+  m_AnchoredPosition: {x: -207.7, y: 93.49}
+  m_SizeDelta: {x: 90, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493330329
 MonoBehaviour:
@@ -118309,8 +118331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 402.55, y: -31.236496}
-  m_SizeDelta: {x: 805.1, y: 62.472992}
+  m_AnchoredPosition: {x: 268.55, y: -23.211502}
+  m_SizeDelta: {x: 537.1, y: 46.423004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1834497969
 MonoBehaviour:
@@ -125492,6 +125514,59 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
   m_PrefabInternal: {fileID: 2011504650}
+--- !u!1 &2011524603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2011524605}
+  - component: {fileID: 2011524604}
+  m_Layer: 0
+  m_Name: Message Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2011524604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011524603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb226c43f396cb40932bb6dfde00c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 856271228}
+  textDisplayObject: {fileID: 723392899}
+  messageDisplay: {fileID: 65708793}
+  avCue: {fileID: 1493330327}
+  closeMessageCue: {fileID: 586569668}
+  message1: Find the Temple of the Horse.
+  message2: Explore the Temple of the Horse.
+  message3: Find the Temple of the Lion.
+  message4: Explore the Temple of the Lion.
+  message5: Find the key in the Temple of the Horse.
+  message6: Find the Temple of the Dragon.
+  message7: Explore the Temple of the Dragon.
+  message8: Find the Dragon Idol in the Temple of the Lion.
+--- !u!4 &2011524605
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011524603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2012132416
 Prefab:
   m_ObjectHideFlags: 0
@@ -134442,8 +134517,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405.55, y: -102.70949}
-  m_SizeDelta: {x: 805.1, y: 62.472992}
+  m_AnchoredPosition: {x: 271.55, y: -72.63451}
+  m_SizeDelta: {x: 537.1, y: 46.423004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105542073
 MonoBehaviour:
@@ -134652,6 +134727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111668487}
   - component: {fileID: 2111668488}
+  - component: {fileID: 2111668489}
   m_Layer: 0
   m_Name: TempleOfTheHorse
   m_TagString: Untagged
@@ -134689,10 +134765,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277678856e696bf4bb35c31060024607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInventory: {fileID: 856271233}
+  messageController: {fileID: 2011524604}
+  lionKey: {fileID: 1656375679}
   gate1: {fileID: 480915738}
   gate2: {fileID: 1630344991}
   pressurePlate1: {fileID: 1885961639}
   pressurePlate2: {fileID: 346815548}
+--- !u!135 &2111668489
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2111668486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 27.3
+  m_Center: {x: 369.1, y: 305, z: -300.4}
 --- !u!1 &2114350714 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}

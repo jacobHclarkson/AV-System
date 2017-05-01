@@ -8,6 +8,7 @@ public class LevelOneController : MonoBehaviour {
     [SerializeField] Light lightThree;
     [SerializeField] Light lightFour;
     [SerializeField] GameObject door;
+    [SerializeField] MessageController messageController;
 
     bool roomOneSolved = false;
     bool allLightsOn = false;
@@ -26,6 +27,9 @@ public class LevelOneController : MonoBehaviour {
         {
             door.transform.Rotate(Vector3.up * Time.deltaTime * 20);
         }
+
+        if (roomOneSolved)
+            messageController.SetAVCue(false);
 	}
 
     void CheckLights()
@@ -50,5 +54,18 @@ public class LevelOneController : MonoBehaviour {
             return true;
         }
         else return false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("In fire room");
+        if (other.gameObject.name == "Character" && !roomOneSolved)
+            messageController.SetAVCue(true);
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.name == "Character")
+            messageController.SetAVCue(false);
     }
 }
