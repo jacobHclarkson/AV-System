@@ -8,6 +8,7 @@ public class PlaceDragonStatue : MonoBehaviour {
     [SerializeField] MeshRenderer rend;
     [SerializeField] Inventory playerInventory;
     [SerializeField] GameObject dragonIdol;
+    [SerializeField] MessageController messageController;
 
 
     private bool placed = false;
@@ -18,8 +19,13 @@ public class PlaceDragonStatue : MonoBehaviour {
         {
             if (prox.inProximity && playerInventory.HasItem(dragonIdol))
             {
+                messageController.SetAVCue(true);
                 rend.enabled = true;
                 placed = true;
+            }
+            if (prox.inProximity && !playerInventory.HasItem(dragonIdol))
+            {
+                messageController.SetMessage(messageController.message8);
             }
         }		
 	}

@@ -6,6 +6,10 @@ public class LevelTwoController : MonoBehaviour {
     [SerializeField] TableColliderCheck horseTable;
     [SerializeField] TableColliderCheck dragonTable;
     [SerializeField] TableColliderCheck lionTable;
+    [SerializeField] MessageController messageController;
+    [SerializeField] Inventory playerInventory;
+    [SerializeField] GameObject dragonIdol;
+
 
     bool solved = false;
     Vector3 gateStartPos;
@@ -32,6 +36,14 @@ public class LevelTwoController : MonoBehaviour {
         if(horseTable.objectPlaced && dragonTable.objectPlaced && lionTable.objectPlaced)
         {
             solved = true;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Character" && playerInventory.HasItem(dragonIdol))
+        {
+            messageController.SetMessage(messageController.message7);
         }
     }
 }
