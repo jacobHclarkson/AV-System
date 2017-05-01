@@ -8,6 +8,7 @@ public class LionDoor : MonoBehaviour {
     [SerializeField] Inventory playerInventory;
     [SerializeField] GameObject key;
     [SerializeField] GameObject lionKey;
+    [SerializeField] MessageController messageController;
 
     private float originalRotation;
     bool unlocked = false;
@@ -25,6 +26,11 @@ public class LionDoor : MonoBehaviour {
         {
             unlocked = true;
             key.SetActive(true);
+        }
+
+	    if(prox.inProximity && vrItem.IsOver && !playerInventory.HasItem(lionKey) && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
+        {
+            messageController.SetMessage(messageController.message5);
         }
 
         if (unlocked)

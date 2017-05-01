@@ -11,8 +11,6 @@ public class HorseController : MonoBehaviour {
     [SerializeField] PressurePlate pressurePlate1;
     [SerializeField] PressurePlate pressurePlate2;
 
-    bool solved = false;
-
 	void Update () {
         if(gate1.transform.position.y >= pressurePlate1.gateStartPosition.y + 3.5 && gate2.transform.position.y >= pressurePlate2.gateStartPosition.y + 3.5)
         {
@@ -23,6 +21,7 @@ public class HorseController : MonoBehaviour {
         if (playerInventory.HasItem(lionKey))
         {
             messageController.SetMessage(messageController.message3);
+            enabled = false;
         }
 	}
 

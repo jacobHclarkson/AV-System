@@ -6302,6 +6302,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 133323825}
+  - component: {fileID: 133323827}
+  - component: {fileID: 133323826}
   m_Layer: 0
   m_Name: TempleOfTheLion
   m_TagString: Untagged
@@ -6328,6 +6330,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &133323826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133323824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394c53d7dd5c28b49a88326243c96bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 856271233}
+  messageController: {fileID: 2011524604}
+  lionKey: {fileID: 1656375679}
+--- !u!135 &133323827
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133323824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 25.09
+  m_Center: {x: 20.1, y: 3, z: 31.7}
 --- !u!1 &133325133 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 7b5f2f9ea19c74c659ab8ac969280fb2, type: 2}
@@ -42884,6 +42912,7 @@ MonoBehaviour:
   playerInventory: {fileID: 856271233}
   key: {fileID: 24480462}
   lionKey: {fileID: 1656375679}
+  messageController: {fileID: 2011524604}
 --- !u!65 &592507323
 BoxCollider:
   m_ObjectHideFlags: 0

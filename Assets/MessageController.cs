@@ -46,6 +46,8 @@ public class MessageController : MonoBehaviour {
 
     public void SetAVCue(bool b)
     {
+        textDisplayObject.SetActive(true);
+        closeMessageCue.SetActive(true);
         avCue.SetActive(b);
     }
 
@@ -57,5 +59,7 @@ public class MessageController : MonoBehaviour {
     public void SetMessage(string message)
     {
         messageDisplay.text = message;
+        textDisplayObject.SetActive(true);
+        closeMessageCue.SetActive(true);
     }
 }
