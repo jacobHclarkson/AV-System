@@ -19,7 +19,7 @@ public class PickUp : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (proximityChecker.inProximity && item.IsOver && !holding && Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button"))
+        if (proximityChecker.inProximity && item.IsOver && !holding && (Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button")))
         {
             transform.parent = mainCamera.transform;
             rb.isKinematic = true;
@@ -31,7 +31,7 @@ public class PickUp : MonoBehaviour {
             minHoldTime -= Time.deltaTime;
         }
 
-        if(holding && minHoldTime <= 0.0f && Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button"))
+        if(holding && minHoldTime <= 0.0f && (Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button")))
         {
             transform.parent = null;
             rb.isKinematic = false;

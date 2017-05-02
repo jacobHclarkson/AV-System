@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.64482754, g: 0.64482754, b: 0.64482754, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -51,8 +51,8 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 0
-    m_EnableRealtimeLightmaps: 1
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 8
     m_Resolution: 2
@@ -6726,7 +6726,7 @@ TerrainCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 147432743}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 279cff0caf242e2469e55f6b9e47f025, type: 2}
   m_EnableTreeColliders: 1
@@ -14616,6 +14616,10 @@ Prefab:
     - target: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_LocalScale.x
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
@@ -54337,7 +54341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 982794672}
-  requiredDistance: 2
+  requiredDistance: 2.5
   inProximity: 0
 --- !u!114 &715945275
 MonoBehaviour:
@@ -72324,6 +72328,7 @@ GameObject:
   - component: {fileID: 982794685}
   - component: {fileID: 982794687}
   - component: {fileID: 982794686}
+  - component: {fileID: 982794688}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -72398,6 +72403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eyeRayCaster: {fileID: 982794677}
   cueImage: {fileID: 1350442411}
+  reticule: {fileID: 731908155}
 --- !u!114 &982794676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72710,6 +72716,17 @@ MonoBehaviour:
     dirtTexture: {fileID: 0}
     dirtIntensity: 2.5
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
+--- !u!114 &982794688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982794672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfa4238238e34e4dbebbd68ee45d39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &984696154 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
@@ -76472,7 +76489,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 91d652779ec7140488b6b8e360497937, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.24268
+      value: 8.284
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 91d652779ec7140488b6b8e360497937, type: 2}
       propertyPath: m_LocalPosition.y
@@ -82192,7 +82209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 91d652779ec7140488b6b8e360497937, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -31.741821
+      value: -31.72
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 91d652779ec7140488b6b8e360497937, type: 2}
       propertyPath: m_LocalRotation.x
@@ -82592,7 +82609,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -86075,7 +86092,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 91d652779ec7140488b6b8e360497937, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -31.741821
+      value: -31.72
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 91d652779ec7140488b6b8e360497937, type: 2}
       propertyPath: m_LocalRotation.x
@@ -97756,7 +97773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1493330328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -112421,7 +112438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2f96746c6005c64888263f64272a556, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.139
+      value: 7.228
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2f96746c6005c64888263f64272a556, type: 2}
       propertyPath: m_LocalRotation.x
@@ -125593,6 +125610,7 @@ MonoBehaviour:
   messageDisplay: {fileID: 65708793}
   avCue: {fileID: 1493330327}
   closeMessageCue: {fileID: 586569668}
+  showHands: 0
   message1: Find the Temple of the Horse.
   message2: Explore the Temple of the Horse.
   message3: Find the Temple of the Lion.

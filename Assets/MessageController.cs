@@ -11,6 +11,8 @@ public class MessageController : MonoBehaviour {
     [SerializeField] GameObject avCue;
     [SerializeField] GameObject closeMessageCue;
 
+    public bool showHands = false;
+
     public string message1 = "Find the Temple of the Horse.";
     public string message2 = "Explore the Temple of the Horse.";
     public string message3 = "Find the Temple of the Lion.";
@@ -42,10 +44,15 @@ public class MessageController : MonoBehaviour {
     {
         textDisplayObject.SetActive(!textDisplayObject.activeSelf);
         closeMessageCue.SetActive(!closeMessageCue.activeSelf);
+        if (showHands)
+        {
+            avCue.SetActive(!avCue.activeSelf);
+        }
     }
 
     public void SetAVCue(bool b)
     {
+        showHands = b;
         textDisplayObject.SetActive(true);
         closeMessageCue.SetActive(true);
         avCue.SetActive(b);

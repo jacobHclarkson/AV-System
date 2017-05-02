@@ -30,7 +30,7 @@ public class PressurePlate : MonoBehaviour {
             standing = CheckForPlayer();
             if (on || standing)
             {
-                if (transform.position.y > buttonStartPosition.y - 0.08)
+                if (transform.position.y > buttonStartPosition.y - 0.06)
                 {
                     transform.Translate(Vector3.down * Time.deltaTime);
                 }

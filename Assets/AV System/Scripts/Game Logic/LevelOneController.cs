@@ -11,6 +11,7 @@ public class LevelOneController : MonoBehaviour {
     [SerializeField] MessageController messageController;
 
     bool roomOneSolved = false;
+    bool messageSent = false;
     bool allLightsOn = false;
 
 	void Update () {
@@ -28,8 +29,12 @@ public class LevelOneController : MonoBehaviour {
             door.transform.Rotate(Vector3.up * Time.deltaTime * 20);
         }
 
-        if (roomOneSolved)
+        if (roomOneSolved && !messageSent)
+        {
+            messageSent = true;
             messageController.SetAVCue(false);
+            messageController.SetMessage("Take the key.");
+        }
 	}
 
     void CheckLights()
@@ -63,9 +68,9 @@ public class LevelOneController : MonoBehaviour {
             messageController.SetAVCue(true);
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.name == "Character")
-            messageController.SetAVCue(false);
-    }
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if(other.gameObject.name == "Character")
+    //        messageController.SetAVCue(false);
+    //}
 }
