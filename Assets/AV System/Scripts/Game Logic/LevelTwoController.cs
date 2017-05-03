@@ -14,6 +14,7 @@ public class LevelTwoController : MonoBehaviour {
     [SerializeField] AudioClip dragonRoar0;
     [SerializeField] AudioClip dragonRoar1;
     [SerializeField] AudioClip dragonWings;
+    [SerializeField] VRStandardAssets.Utils.VRCameraFade fader;
 
 
     public bool solved = false;
@@ -66,9 +67,6 @@ public class LevelTwoController : MonoBehaviour {
         dragonStatue.GetComponent<AudioSource>().PlayOneShot(dragonRoar1);
         dragonStatue.GetComponent<AudioSource>().PlayOneShot(dragonWings);
 
-        if (!dragonStatue.GetComponent<AudioSource>().isPlaying)
-        {
-            // fade to black
-        }
+        fader.FadeOut(10, false);
     }
 }
