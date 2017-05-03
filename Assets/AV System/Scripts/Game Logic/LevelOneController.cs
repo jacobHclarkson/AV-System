@@ -9,6 +9,7 @@ public class LevelOneController : MonoBehaviour {
     [SerializeField] Light lightFour;
     [SerializeField] GameObject door;
     [SerializeField] MessageController messageController;
+    [SerializeField] AudioSource audioSource;
 
     bool roomOneSolved = false;
     bool messageSent = false;
@@ -32,6 +33,7 @@ public class LevelOneController : MonoBehaviour {
         if (roomOneSolved && !messageSent)
         {
             messageSent = true;
+            audioSource.Play();
             messageController.SetAVCue(false);
             messageController.SetMessage("Take the key.");
         }
@@ -67,10 +69,4 @@ public class LevelOneController : MonoBehaviour {
         if (other.gameObject.name == "Character" && !roomOneSolved)
             messageController.SetAVCue(true);
     }
-
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if(other.gameObject.name == "Character")
-    //        messageController.SetAVCue(false);
-    //}
 }

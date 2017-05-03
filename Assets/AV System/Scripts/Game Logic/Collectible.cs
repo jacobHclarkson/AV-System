@@ -6,6 +6,7 @@ public class Collectible : MonoBehaviour {
     [SerializeField] ProximityChecker proxCheck;
     [SerializeField] VRStandardAssets.Utils.VRInteractiveItem interactiveItem;
     [SerializeField] Inventory inventory;
+    [SerializeField] AudioSource audioSource;
 
     private Renderer rend;
 
@@ -19,6 +20,7 @@ public class Collectible : MonoBehaviour {
         if (proxCheck.inProximity && interactiveItem.IsOver && (Input.GetButtonDown("Jump") || Input.GetButtonDown("A Button")))
         {
             inventory.AddItem(this.gameObject);
+            audioSource.Play();
             rend.enabled = false;
         }	
 	}

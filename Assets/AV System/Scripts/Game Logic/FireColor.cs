@@ -10,6 +10,7 @@ public class FireColor : MonoBehaviour {
     [SerializeField] private VRInteractiveItem m_Item;
     [SerializeField] GameObject fireObject;
     [SerializeField] ProximityChecker proximityChecker;
+    [SerializeField] AudioSource audioSource;
 
 
     Color[] colorArray = { Color.red, Color.green, Color.yellow};
@@ -23,10 +24,12 @@ public class FireColor : MonoBehaviour {
         if(proximityChecker.inProximity && !fireObject.activeSelf && m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
             fireObject.SetActive(true);
+            audioSource.Play();
         }
         if (fireObject.activeSelf && m_Item.IsOver && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
             CycleColors();
+            audioSource.Play();
         }
 	}
 

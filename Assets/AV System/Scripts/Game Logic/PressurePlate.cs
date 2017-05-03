@@ -5,6 +5,9 @@ public class PressurePlate : MonoBehaviour {
 
     [SerializeField] GameObject gate;
     [SerializeField] ProximityChecker proxChecker;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource gateRaiseAudio;
+    [SerializeField] AudioSource gateLowerAudio;
 
     public bool on = false;
     public bool standing = false;
@@ -32,6 +35,8 @@ public class PressurePlate : MonoBehaviour {
             {
                 if (transform.position.y > buttonStartPosition.y - 0.06)
                 {
+                    audioSource.Play();
+                    gateRaiseAudio.Play();
                     transform.Translate(Vector3.down * Time.deltaTime);
                 }
 
@@ -45,6 +50,8 @@ public class PressurePlate : MonoBehaviour {
             {
                 if (transform.position.y < buttonStartPosition.y)
                 {
+                    gateRaiseAudio.Stop();
+                    gateLowerAudio.Play();
                     transform.Translate(Vector3.up * Time.deltaTime);
                 }
 

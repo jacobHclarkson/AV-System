@@ -8,14 +8,14 @@ public class AudioController : MonoBehaviour {
     [SerializeField] AudioSource seagulls;
     [SerializeField] AudioSource forrest1;
     [SerializeField] AudioSource forrest2;
-    [SerializeField] AudioSource mountain1;
-    [SerializeField] AudioSource mountain2;
+    //[SerializeField] AudioSource mountain1;
+    //[SerializeField] AudioSource mountain2;
 
     AudioSource[] environmentalAudioSources;
 
     void Start()
     {
-        environmentalAudioSources = new AudioSource[] { ocean, seagulls, forrest1, forrest2, mountain1, mountain2 };
+        environmentalAudioSources = new AudioSource[] { ocean, seagulls, forrest1, forrest2};
     }
 
     public void FadeOutEnvironmentalAudio()
