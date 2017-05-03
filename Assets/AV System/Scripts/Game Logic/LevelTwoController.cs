@@ -9,9 +9,15 @@ public class LevelTwoController : MonoBehaviour {
     [SerializeField] MessageController messageController;
     [SerializeField] Inventory playerInventory;
     [SerializeField] GameObject dragonIdol;
+    [SerializeField] GameObject dragonStatue;
+    [SerializeField] AudioClip dragonLanding;
+    [SerializeField] AudioClip dragonRoar0;
+    [SerializeField] AudioClip dragonRoar1;
+    [SerializeField] AudioClip dragonWings;
 
 
-    bool solved = false;
+    public bool solved = false;
+    bool ending = false;
     Vector3 gateStartPos;
 
     void Start()
@@ -23,11 +29,13 @@ public class LevelTwoController : MonoBehaviour {
         if (!solved)
         {
             CheckSolution();
-        }
-
-        if(solved && gate.transform.position.y < gateStartPos.y + 3.9)
+        }else
         {
-            gate.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+            if (!ending)
+            {
+                ending = true;
+                PlayEnding();
+            }
         }
 	}
 
@@ -44,6 +52,23 @@ public class LevelTwoController : MonoBehaviour {
         if(other.gameObject.name == "Character" && playerInventory.HasItem(dragonIdol))
         {
             messageController.SetMessage(messageController.message7);
+        }
+    }
+
+    void PlayEnding()
+    {
+        // make dragon dissapear
+        dragonStatue.GetComponentInChildren<MeshRenderer>().enabled = false;
+
+        // play noises
+        dragonStatue.GetComponent<AudioSource>().PlayOneShot(dragonLanding);
+        dragonStatue.GetComponent<AudioSource>().PlayOneShot(dragonRoar0);
+        dragonStatue.GetComponent<AudioSource>().PlayOneShot(dragonRoar1);
+        dragonStatue.GetComponent<AudioSource>().PlayOneShot(dragonWings);
+
+        if (!dragonStatue.GetComponent<AudioSource>().isPlaying)
+        {
+            // fade to black
         }
     }
 }
