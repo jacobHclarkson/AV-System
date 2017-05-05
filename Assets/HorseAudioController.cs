@@ -5,12 +5,14 @@ using UnityEngine;
 public class HorseAudioController : MonoBehaviour {
 
     [SerializeField] AudioController audioController;
+    [SerializeField] UnityStandardAssets.Characters.FirstPerson.FirstPersonController character;
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Character")
         {
             audioController.FadeOutEnvironmentalAudio();
+            character.outside = false;
         }
     }
 
@@ -19,6 +21,7 @@ public class HorseAudioController : MonoBehaviour {
         if(other.gameObject.name == "Character")
         {
             audioController.FadeInEnvironmentalAudio();
+            character.outside = true;
         }
     }
 }
