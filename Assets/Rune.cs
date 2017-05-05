@@ -7,8 +7,9 @@ public class Rune : MonoBehaviour {
     [SerializeField] VRStandardAssets.Utils.VRInteractiveItem vrItem;
     [SerializeField] ProximityChecker prox;
     [SerializeField] GameObject displayPlane;
+    [SerializeField] LionController lionController;
 
-    public bool active = false;
+    public bool activated = false;
 
     Color startColor;
 
@@ -19,16 +20,14 @@ public class Rune : MonoBehaviour {
 
     void Update()
     {
-        // if player close and presses A
-        if(vrItem.IsOver && prox.inProximity && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
+        if(vrItem.IsOver && prox.inProximity && activated == false && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
-            // play sound
+            lionController.currentAttempt.Add(gameObject);
+            GetComponent<AudioSource>().Play();
             ToggleActive();
         }
-
-        if (active)
+        if (activated)
         {
-            // glow
             displayPlane.GetComponent<Renderer>().material.color = Color.green;
         }else
         {
@@ -38,7 +37,7 @@ public class Rune : MonoBehaviour {
 
     void ToggleActive()
     {
-        active = !active;
+        activated = !activated;
     }
 
 }
