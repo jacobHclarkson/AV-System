@@ -713,7 +713,7 @@ MonoBehaviour:
   dragonLanding: {fileID: 8300000, guid: 709e3b7736e11e0459d7b639bafb3fd8, type: 3}
   dragonRoar0: {fileID: 8300000, guid: 286beb04c02338745b6805d4a594b68f, type: 3}
   dragonRoar1: {fileID: 8300000, guid: c9d9b75d7129a264082a16044999f8a5, type: 3}
-  dragonWings: {fileID: 8300000, guid: 22ef56b5b0f670845b56dc11bb31c47a, type: 3}
+  dragonWings: {fileID: 8300000, guid: 0ebf604c9d7e47744997519e6f90a8a3, type: 3}
   fader: {fileID: 982794688}
   solved: 0
 --- !u!135 &27687102
@@ -6972,7 +6972,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -7202,7 +7202,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     startSizeY:
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7213,15 +7213,9 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - serializedVersion: 2
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -7231,17 +7225,11 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - serializedVersion: 2
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
     startSizeZ:
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7252,15 +7240,9 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - serializedVersion: 2
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -7270,15 +7252,9 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - serializedVersion: 2
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
     startRotationX:
       minMaxState: 0
       scalar: 1
@@ -10495,7 +10471,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.449
+      value: 0.759
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16556,15 +16532,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 36f258ea05b6e8644ae91a5b98eba017, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.168
+      value: 9.37
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36f258ea05b6e8644ae91a5b98eba017, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.37
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36f258ea05b6e8644ae91a5b98eba017, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.091
+      value: -5.84
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36f258ea05b6e8644ae91a5b98eba017, type: 2}
       propertyPath: m_LocalRotation.x
@@ -60072,7 +60048,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10f6c197dbc5b3d4bb207a1bd7921eba, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.65
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10f6c197dbc5b3d4bb207a1bd7921eba, type: 2}
@@ -64244,7 +64220,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.475
+      value: 0.765
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -64505,7 +64481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 1.4
+  m_WalkSpeed: 2
   m_RunSpeed: 4
   m_RunstepLenghten: 1
   m_JumpSpeed: 7
@@ -88323,31 +88299,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.965942
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.4267273
+      value: 7.386
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 17.592262
+      value: 17.711
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.023903912
+      value: -0.021138182
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.23514634
+      value: 0.35280904
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.0013889518
+      value: 0.035448108
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.971665
+      value: 0.9347847
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_RootOrder
@@ -88355,15 +88331,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -27.22
+      value: 41.26
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 2.7
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.49
+      value: 2.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb9a0a0315e3a16499b4caa557a46bfb, type: 2}
@@ -94112,7 +94088,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.5
+      value: 0.745
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -99766,15 +99742,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4350506286678972, guid: ef454f3efc5cd394d9e40ae22875f007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.722946
+      value: 9.87
       objectReference: {fileID: 0}
     - target: {fileID: 4350506286678972, guid: ef454f3efc5cd394d9e40ae22875f007, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.517727
+      value: 7.707
       objectReference: {fileID: 0}
     - target: {fileID: 4350506286678972, guid: ef454f3efc5cd394d9e40ae22875f007, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 18.617264
+      value: 18.173
       objectReference: {fileID: 0}
     - target: {fileID: 4350506286678972, guid: ef454f3efc5cd394d9e40ae22875f007, type: 2}
       propertyPath: m_LocalRotation.x
@@ -115033,7 +115009,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.532
+      value: 0.762
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -128908,7 +128884,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.407036
+      value: 9.336
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -128916,7 +128892,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 20.926373
+      value: 21.058
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -128948,7 +128924,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.64999974
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b0e0e89eed1bb7f4982f8a6092a384b6, type: 2}
       propertyPath: m_Name
@@ -129294,7 +129270,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.468
+      value: 0.753
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -134168,7 +134144,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.513
+      value: 0.753
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -44,7 +44,10 @@ public class LionController : MonoBehaviour {
         {
             solved = CheckSolution();
             if (solved)
+            {
                 door.GetComponent<AudioSource>().Play();
+                messageController.SetMessage("Take the dragon idol.");
+            }
         }
 
         if(solved && door.transform.eulerAngles.y < 359.0f)

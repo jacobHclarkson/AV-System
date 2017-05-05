@@ -10,7 +10,7 @@ public class PickUp : MonoBehaviour {
 
     bool holding = false;
 
-    float minHoldTime = 0.05f;
+    float minHoldTime = 0.1f;
 
     Rigidbody rb;
 
@@ -36,7 +36,7 @@ public class PickUp : MonoBehaviour {
             transform.parent = null;
             rb.isKinematic = false;
             holding = false;
-            minHoldTime = 0.05f;
+            minHoldTime = 0.1f;
         }
 	}
 }
