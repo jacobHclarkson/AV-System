@@ -45,6 +45,7 @@ public class LionController : MonoBehaviour {
             solved = CheckSolution();
             if (solved)
             {
+                messageController.SetAVCue(false);
                 door.GetComponent<AudioSource>().Play();
                 messageController.SetMessage("Take the dragon idol.");
             }

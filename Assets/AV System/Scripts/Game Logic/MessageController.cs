@@ -10,6 +10,8 @@ public class MessageController : MonoBehaviour {
     [SerializeField] Text messageDisplay;
     [SerializeField] GameObject avCue;
     [SerializeField] GameObject closeMessageCue;
+    [SerializeField] AudioSource playerAudioSource;
+    [SerializeField] AudioClip messageNotification;
 
     public bool showHands = false;
 
@@ -52,6 +54,8 @@ public class MessageController : MonoBehaviour {
 
     public void SetAVCue(bool b)
     {
+        if(b)
+            playerAudioSource.PlayOneShot(messageNotification);
         showHands = b;
         textDisplayObject.SetActive(true);
         closeMessageCue.SetActive(true);
@@ -68,5 +72,6 @@ public class MessageController : MonoBehaviour {
         messageDisplay.text = message;
         textDisplayObject.SetActive(true);
         closeMessageCue.SetActive(true);
+        playerAudioSource.PlayOneShot(messageNotification);
     }
 }

@@ -26,6 +26,8 @@ public class LionDoor : MonoBehaviour {
         {
             unlocked = true;
             key.SetActive(true);
+            GetComponent<AudioSource>().Play();
+            messageController.SetAVCue(true);
         }
 
 	    if(prox.inProximity && vrItem.IsOver && !playerInventory.HasItem(lionKey) && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
