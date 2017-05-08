@@ -20,6 +20,11 @@ public class Rune : MonoBehaviour {
 
     void Update()
     {
+        if(vrItem.IsOver && prox.inProximity && activated == true && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
+        {
+            lionController.currentAttempt.Clear();
+            lionController.DeactivateAll();
+        }else
         if(vrItem.IsOver && prox.inProximity && activated == false && (Input.GetButtonDown("A Button") || Input.GetButtonDown("Jump")))
         {
             lionController.currentAttempt.Add(gameObject);
