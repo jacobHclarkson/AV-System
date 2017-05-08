@@ -27,6 +27,7 @@ public class LionDoor : MonoBehaviour {
             unlocked = true;
             key.SetActive(true);
             GetComponent<AudioSource>().Play();
+            messageController.SetMessage("Read the message in the bottle");
             messageController.SetAVCue(true);
         }
 

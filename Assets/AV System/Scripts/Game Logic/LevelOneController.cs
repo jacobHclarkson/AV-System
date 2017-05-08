@@ -67,6 +67,9 @@ public class LevelOneController : MonoBehaviour {
     {
         Debug.Log("In fire room");
         if (other.gameObject.name == "Character" && !roomOneSolved)
+        {
+            messageController.SetMessage("Look under the cup.");
             messageController.SetAVCue(true);
+        }
     }
 }
