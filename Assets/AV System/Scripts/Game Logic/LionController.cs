@@ -37,6 +37,7 @@ public class LionController : MonoBehaviour {
         if (playerInventory.HasItem(dragonIdol) && !messageSent)
         {
             messageSent = true;
+            messageController.SetAVCue(false);
             messageController.SetMessage(messageController.message6); 
         }
 
